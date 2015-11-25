@@ -5,6 +5,7 @@ import cn.com.u2be.chapter01.entity.Customer;
 import cn.com.u2be.chapter01.service.CustomerService;
 import cn.com.u2be.framework.annotation.Action;
 import cn.com.u2be.framework.annotation.Controller;
+import cn.com.u2be.framework.annotation.Inject;
 import cn.com.u2be.framework.bean.Param;
 import cn.com.u2be.framework.bean.View;
 
@@ -16,7 +17,7 @@ import java.util.List;
  */
 @Controller
 public class CustomerAction {
-
+    @Inject
     private CustomerService customerService;
 
     @Action("get:/customer")

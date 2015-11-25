@@ -1,6 +1,7 @@
 package cn.com.u2be.chapter01.service;
 
 import cn.com.u2be.chapter01.entity.Customer;
+import cn.com.u2be.framework.annotation.Service;
 
 import java.util.List;
 
