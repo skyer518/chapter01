@@ -1,8 +1,9 @@
 package cn.com.u2be.chapter01.dao.impl;
 
-import cn.com.u2be.alekMvc.helper.DatabaseHelper;
+
 import cn.com.u2be.chapter01.dao.CustomerDao;
 import cn.com.u2be.chapter01.entity.Customer;
+import cn.com.u2be.framework.helper.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +14,12 @@ import java.util.List;
 public class CustomerDaoImpl implements CustomerDao {
 
     public List<Customer> getCustomerList() {
-        List<Customer> customerList = new ArrayList<Customer>(0);
-        //Customer customer = DatabaseHelper.queryEntityList(Customer.class,sql);
-
-
-        return null;
+        String sql = "SELECT * FROM " + DatabaseHelper.getTableName(Customer.class);
+        return DatabaseHelper.queryEntityList(Customer.class, sql);
     }
 
     public Customer getCustomer(long id) {
-        return null;
+        String sql = String.format("SELECT * FROM %s WHERE id =?", DatabaseHelper.getTableName(Customer.class));
+        return DatabaseHelper.queryEntity(Customer.class, sql, id);
     }
 }
